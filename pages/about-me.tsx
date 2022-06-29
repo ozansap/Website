@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Home from '../components/Home';
+import AboutMe from '../components/AboutMe';
 import Navigation from '../components/Navigation';
 
 
@@ -8,7 +8,7 @@ type props = {
 
 }
 
-const Page_Home: NextPage<props> = ({
+const Page_AboutMe: NextPage<props> = ({
 
 }) => {
 
@@ -22,10 +22,10 @@ const Page_Home: NextPage<props> = ({
 
       <main>
         <Navigation />
-        <Home />
+        <AboutMe />
       </main>
     </div>
   )
 }
 
-export default Page_Home;
+export default Page_AboutMe;
