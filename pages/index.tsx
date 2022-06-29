@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
 import Logo from '../components/Logo';
 import Main from '../components/Main';
 import Navigation from '../components/Navigation';
+import useWindowDimensions from '../lib/useWindowDimensions';
 
 
 type props = {
@@ -12,6 +14,10 @@ type props = {
 const Page_Home: NextPage<props> = ({
 
 }) => {
+  const [activeSection, setActiveSection] = useState(0);
+  const { width, height } = useWindowDimensions();
+
+  setTimeout(() => {setActiveSection((activeSection + 1) % 3)}, 3000);
 
   return (
     <div>
@@ -22,9 +28,18 @@ const Page_Home: NextPage<props> = ({
       </Head>
 
       <main>
-        <Navigation />
-        <Logo />
-        <Main />
+        <Navigation 
+          activeSection={activeSection}
+          width={width}
+          />
+        <Logo 
+          activeSection={activeSection }
+          width={width}
+        />
+        <Main 
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
       </main>
     </div>
   )

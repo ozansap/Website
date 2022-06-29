@@ -10,7 +10,7 @@ const AboutMe: FC<props> = () => {
 
   return (
     <div className={styles.AboutMe}>
-      <p>hello</p>
+
     </div>
   )
 }

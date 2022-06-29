@@ -5,10 +5,13 @@
   top: 30vh;
   left: 10vw;
 
-  font-family: "Dancing Script";
-  font-weight: 700;
   font-size: 5rem;
-  color: $color_light;
+  font-weight: 700;
+  
+  & a {
+    color: #0088ff;
+    font-family: "Dancing Script";
+  }
 }
 
 @media screen and (min-width: 750px) {

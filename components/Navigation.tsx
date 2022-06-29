@@ -1,18 +1,17 @@
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import styles from '../styles/Navigation.module.scss';
 import { motion, TargetAndTransition } from "framer-motion";
-import useWindowDimensions from '../lib/useWindowDimensions';
 
 
 type props = {
-  
+  activeSection: number,
+  width: number
 }
 
-const Navigation: FC<props> = () => {
-  const [activeSection, setActiveSection] = useState(0);
-  const { width, height } = useWindowDimensions();
-
+const Navigation: FC<props> = ({
+  activeSection, width
+}) => {
   const buttonAnimation = (active: number): TargetAndTransition =>  {
     return (active === activeSection) ?
       {
@@ -24,8 +23,6 @@ const Navigation: FC<props> = () => {
         color: "#b3b3b3"
       }
   }
-
-  setTimeout(() => {setActiveSection((activeSection + 1) % 3)}, 3000);
 
   const highlightAnimation = (): TargetAndTransition => {
     return {
