@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Home from '../components/Home';
+import Main from '../components/Main';
 import Navigation from '../components/Navigation';
 
 
@@ -22,7 +22,7 @@ const Page_Home: NextPage<props> = ({
 
       <main>
         <Navigation />
-        <Home />
+        <Main />
       </main>
     </div>
   )
