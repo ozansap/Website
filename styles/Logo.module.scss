@@ -1,0 +1,12 @@
+@import "colors";
+
+.Logo {
+  position: fixed;
+  top: 30vh;
+  left: 10vw;
+
+  font-family: "Dancing Script";
+  font-weight: 700;
+  font-size: 8rem;
+  color: $color_light;
+}
