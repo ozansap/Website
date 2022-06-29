@@ -39,3 +39,9 @@ html {
     display: none !important;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}

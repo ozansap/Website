@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FC, useState } from 'react';
 import styles from '../styles/Navigation.module.scss';
 import { motion, TargetAndTransition } from "framer-motion";
+import useWindowDimensions from '../lib/useWindowDimensions';
 
 
 type props = {
@@ -10,6 +11,7 @@ type props = {
 
 const Navigation: FC<props> = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const { width, height } = useWindowDimensions();
 
   const buttonAnimation = (active: number): TargetAndTransition =>  {
     return (active === activeSection) ?
@@ -23,14 +25,16 @@ const Navigation: FC<props> = () => {
       }
   }
 
+  setTimeout(() => {setActiveSection((activeSection + 1) % 3)}, 3000);
+
   const highlightAnimation = (): TargetAndTransition => {
     return {
-      x: `${(activeSection) * 13}rem`
+      x: `${(activeSection) * ((width > 1100 ? 5 : 2) + 8)}rem`
     }
   }
 
   return (
-    <div className={styles.Navigation}>
+    <div className={styles.Navigation + " mobile-hidden"}>
       <div className={styles.Buttons}>
         <motion.div 
           className={styles.Button} 
