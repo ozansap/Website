@@ -31,7 +31,7 @@ const Logo: FC<props> = ({
       className={styles.Logo}
       animate={logoAnimation()}
     >
-      <Link href="/">
+      <Link href="/" replace>
         <a>OzanSap</a>
       </Link>
     </motion.div>

@@ -41,7 +41,7 @@ const Navigation: FC<props> = ({
             color: "white", 
             transition: { duration: 0.1 }
           }}>
-          <Link href="/#welcome">
+          <Link href="/" replace>
             <a>Welcome</a>
           </Link>
         </motion.div>
@@ -53,7 +53,7 @@ const Navigation: FC<props> = ({
             color: "white", 
             transition: { duration: 0.1 }
           }}>
-          <Link href="/#about-me">
+          <Link href="/#about-me" replace>
             <a>About Me</a>
           </Link>
         </motion.div>
@@ -65,7 +65,7 @@ const Navigation: FC<props> = ({
             color: "white", 
             transition: { duration: 0.1 }
           }}>
-          <Link href="/#projects">
+          <Link href="/#projects" replace>
             <a>Projects</a>
           </Link>
         </motion.div>
