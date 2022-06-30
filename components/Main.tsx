@@ -17,7 +17,9 @@ const Main: FC<props> = ({
 
   return (
     <div className={styles.Main}>
-      <Welcome />
+      <Welcome 
+        activeSection={activeSection}
+      />
       <AboutMe />
       <Projects />
       <Footer />

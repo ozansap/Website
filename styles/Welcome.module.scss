@@ -1,4 +1,21 @@
+@import "colors";
+
 .Welcome {
   position: relative;
   height: 0;
+}
+
+.Text {
+  position: fixed;
+  top: 60vh;
+  right: 10vw;
+}
+
+.Scroll {
+  position: fixed;
+  bottom: 0;
+
+  svg {
+    width: 100px;
+  }
 }
