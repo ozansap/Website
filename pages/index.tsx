@@ -1,4 +1,3 @@
-import { useViewportScroll } from 'framer-motion';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -15,27 +14,33 @@ type props = {
 const Page_Home: NextPage<props> = ({
 
 }) => {
+  const [sections, setSections] = useState<NodeListOf<HTMLElement>>();
   const [activeSection, setActiveSection] = useState(0);
   const { width, height } = useWindowDimensions();
 
+  useEffect(() => {
+    setSections(document.querySelectorAll("section"));
+  }, [])
+  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
   const handleScroll = (e: Event) => {
-    let section: number;
+    const scroll = window.scrollY;
+    let current = 0;
 
-    let scroll = window.scrollY
-    console.log(scroll);
-
-    if (scroll < 1) {
-      section = 0;
-    } else {
-      section = 1;
+    if (1 < scroll) {
+      sections?.forEach((s, i) => {
+        const sectionTop = s.offsetTop;
+        if (scroll >= sectionTop - 100) {
+          current = i || 1; 
+        }
+      });
     }
 
-    if (activeSection !== section) setActiveSection(section);
+    if (activeSection !== current) setActiveSection(current);
   }
 
   return (

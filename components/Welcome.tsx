@@ -9,9 +9,9 @@ type props = {
 const Welcome: FC<props> = () => {
 
   return (
-    <div className={styles.Welcome}>
+    <section className={styles.Welcome}>
 
-    </div>
+    </section>
   )
 }
 

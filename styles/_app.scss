@@ -9,6 +9,8 @@
   font-family: 'Roboto';
   text-decoration: none;
 
+  scroll-behavior: smooth;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,6 +18,10 @@
 html {
   overflow-x: hidden;
   color-scheme: dark;
+}
+
+section {
+  padding-top: 10vh;
 }
 
 .center {
@@ -34,14 +40,24 @@ html {
   align-items: center;
 }
 
-@media screen and (min-width: 750px) {
-  .mobile-only {
+@media screen and (max-width: 750px) {
+  .mobile-hidden {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 750px) {
-  .mobile-hidden {
+@media screen and (min-width: 750px) {
+  .mobile-only {
     display: none !important;
+  }
+
+  section {
+    padding-top: 20vh;
+  }
+}
+
+@media screen and (min-width: 1100) {
+  section {
+    padding-top: 30vh;
   }
 }
