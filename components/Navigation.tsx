@@ -33,42 +33,48 @@ const Navigation: FC<props> = ({
   return (
     <div className={styles.Navigation + " mobile-hidden"}>
       <div className={styles.Buttons}>
-        <motion.div 
-          className={styles.Button} 
-          animate={buttonAnimation(0)}
-          whileHover={{ 
-            backgroundColor: "rgba(255,255,255,0.1)", 
-            color: "white", 
-            transition: { duration: 0.1 }
-          }}>
-          <Link href="/" replace>
+        <Link href="/" replace>
+          <motion.div 
+            className={styles.Button} 
+            animate={buttonAnimation(0)}
+            whileHover={{ 
+              backgroundColor: "rgba(255,255,255,0.1)", 
+              color: "white", 
+              cursor: "pointer",
+              transition: { duration: 0.1 }
+            }}
+          >
             <a>Welcome</a>
-          </Link>
-        </motion.div>
-        <motion.div 
-          className={styles.Button} 
-          animate={buttonAnimation(1)}
-          whileHover={{ 
-            backgroundColor: "rgba(255,255,255,0.1)", 
-            color: "white", 
-            transition: { duration: 0.1 }
-          }}>
-          <Link href="/#about-me" replace>
+          </motion.div>
+        </Link>
+        <Link href="/#about-me" replace>
+          <motion.div
+            className={styles.Button}
+            animate={buttonAnimation(1)}
+            whileHover={{ 
+              backgroundColor: "rgba(255,255,255,0.1)", 
+              color: "white",
+              cursor: "pointer",
+              transition: { duration: 0.1 }
+            }}
+          >
             <a>About Me</a>
-          </Link>
-        </motion.div>
-        <motion.div 
-          className={styles.Button} 
-          animate={buttonAnimation(2)}
-          whileHover={{ 
-            backgroundColor: "rgba(255,255,255,0.1)", 
-            color: "white", 
-            transition: { duration: 0.1 }
-          }}>
-          <Link href="/#projects" replace>
+          </motion.div>
+        </Link>
+        <Link href="/#projects" replace>
+          <motion.div 
+            className={styles.Button} 
+            animate={buttonAnimation(2)}
+            whileHover={{ 
+              backgroundColor: "rgba(255,255,255,0.1)", 
+              color: "white", 
+              cursor: "pointer",
+              transition: { duration: 0.1 }
+            }}
+          >
             <a>Projects</a>
-          </Link>
-        </motion.div>
+          </motion.div>
+        </Link>
       </div>
   
       <motion.div className={styles.Highlight} animate={highlightAnimation()} />

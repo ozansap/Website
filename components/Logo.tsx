@@ -17,12 +17,17 @@ const Logo: FC<props> = ({
       {
         top: "30vh",
         left: "10vw",
-        fontSize: (width > 750) ? "8rem" : "5rem"
-      } : 
+        fontSize: (width < 750) ? "5rem" : "8rem"
+      } : (width < 750) ?
+      {
+        top: "-1vh",
+        left: "1vw",
+        fontSize: "0rem"
+      } :
       {
         top: "0.5vh",
         left: "3vw",
-        fontSize: (width > 750) ? "3rem" : "0rem"
+        fontSize: "3rem"
       }
   }
 
