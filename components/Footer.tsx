@@ -16,6 +16,3 @@ const Footer: FC<props> = () => {
 }
 
 export default Footer;
-
-
-

@@ -44,6 +44,3 @@ const Logo: FC<props> = ({
 }
 
 export default Logo;
-
-
-
