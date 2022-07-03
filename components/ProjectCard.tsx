@@ -20,7 +20,7 @@ const ProjectCard: FC<props> = ({
 }) => {
 
   return (
-    <motion.div className={combine(styles.ProjectCard, [reverse, styles.reverse])}>
+    <motion.div className={combine(styles.ProjectCard, [reverse, styles.reverse])} whileHover={{scale: 1.02}}>
       <motion.img src={thumbnail}/>
       <motion.div className={styles.Text}>
         <motion.div className={styles.Header}>
