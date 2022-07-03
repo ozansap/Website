@@ -37,12 +37,6 @@ const Navigation: FC<props> = ({
           <motion.div 
             className={styles.Button} 
             animate={buttonAnimation(0)}
-            whileHover={{ 
-              backgroundColor: "rgba(255,255,255,0.1)", 
-              color: "white", 
-              cursor: "pointer",
-              transition: { duration: 0.1 }
-            }}
           >
             <a>Welcome</a>
           </motion.div>
@@ -51,12 +45,6 @@ const Navigation: FC<props> = ({
           <motion.div
             className={styles.Button}
             animate={buttonAnimation(1)}
-            whileHover={{ 
-              backgroundColor: "rgba(255,255,255,0.1)", 
-              color: "white",
-              cursor: "pointer",
-              transition: { duration: 0.1 }
-            }}
           >
             <a>About Me</a>
           </motion.div>
@@ -65,12 +53,6 @@ const Navigation: FC<props> = ({
           <motion.div 
             className={styles.Button} 
             animate={buttonAnimation(2)}
-            whileHover={{ 
-              backgroundColor: "rgba(255,255,255,0.1)", 
-              color: "white", 
-              cursor: "pointer",
-              transition: { duration: 0.1 }
-            }}
           >
             <a>Projects</a>
           </motion.div>
