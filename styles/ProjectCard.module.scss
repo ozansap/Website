@@ -81,12 +81,16 @@
     &.reverse {
       flex-direction: row-reverse;
 
-      .Text {
-        align-items: flex-end;
-      }
-
       .Header {
         flex-direction: row-reverse;
+      }
+
+      .Tags {
+        justify-content: flex-end;
+      }
+
+      p {
+        text-align: end;
       }
     }
   }
