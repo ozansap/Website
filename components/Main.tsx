@@ -20,7 +20,9 @@ const Main: FC<props> = ({
       <Welcome 
         activeSection={activeSection}
       />
-      <AboutMe />
+      <AboutMe 
+        activeSection={activeSection}
+      />
       <Projects />
       <Footer />
     </div>
