@@ -2,6 +2,7 @@
 
 .Welcome {
   position: relative;
+  height: 80vh;
 }
 
 .Text {
@@ -16,5 +17,11 @@
 
   svg {
     width: 100px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .Welcome {
+    height: 50vh;
   }
 }
