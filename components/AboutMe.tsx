@@ -2,6 +2,42 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import styles from '../styles/AboutMe.module.scss';
 
+const vTitle = {
+  "y": {
+    opacity: 1,
+    x: 0
+  },
+  "n": {
+    opacity: 0,
+    x: -100
+  }
+}
+
+const vTextContainer = {
+  "y": {
+    borderColor: "rgba(255,255,255,1)",
+    transition: {
+      delay: 0.5,
+      delayChildren: 1,
+      staggerChildren: 0.5,
+      duration: 0.2,
+    }
+  },
+  "n": {
+    borderColor: "rgba(255,255,255,0)",
+  }
+}
+
+const vText = {
+  "y": {
+    opacity: 1,
+    x: 0
+  },
+  "n": {
+    opacity: 0,
+    x: 100
+  }
+}
 
 type props = {
   activeSection: number;
@@ -10,55 +46,30 @@ type props = {
 const AboutMe: FC<props> = ({
   activeSection
 }) => {
-  // const titleAnimation = () => {
-  //   return (activeSection == 1) ? 
-  //     {
-  //       top: "30vh",
-  //       left: "10vw",
-  //       fontSize: (width < 750) ? "5rem" : "8rem"
-  //     } : (width < 750) ?
-  //     {
-  //       top: "-1vh",
-  //       left: "1vw",
-  //       fontSize: "0rem"
-  //     } :
-  //     {
-  //       top: "0.5vh",
-  //       left: "3vw",
-  //       fontSize: "3rem"
-  //     }
-  // }
-
-  // const textAnimation = () => {
-  //   return (activeSection == 1) ? 
-  //     {
-  //       top: "30vh",
-  //       left: "10vw",
-  //       fontSize: (width < 750) ? "5rem" : "8rem"
-  //     } : (width < 750) ?
-  //     {
-  //       top: "-1vh",
-  //       left: "1vw",
-  //       fontSize: "0rem"
-  //     } :
-  //     {
-  //       top: "0.5vh",
-  //       left: "3vw",
-  //       fontSize: "3rem"
-  //     }
-  // }
 
   return (
     <section className={styles.AboutMe} id="about-me">
       <div className={styles.Introduction}>
-        <motion.div>
+        <motion.div 
+          animate={activeSection === 1 ? "y" : "n"} 
+          variants={vTitle} 
+          initial={{x: "-100px", opacity: 0}}
+        >
           <motion.h2>About Me</motion.h2>
         </motion.div>
-        <motion.div>
-          <motion.p>
-            This is my introduction <br />
-            Test Test <br />
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, mollitia. <br />
+        <motion.div 
+          animate={activeSection === 1 ? "y" : "n"} 
+          variants={vTextContainer} 
+          initial={{borderColor:"rgba(255,255,255,0)"}}
+        >
+          <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
+            This is my introduction
+          </motion.p>
+          <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
+            Text Text
+          </motion.p>
+          <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, quod!
           </motion.p>
         </motion.div>
       </div>

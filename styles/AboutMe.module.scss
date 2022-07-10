@@ -1,5 +1,9 @@
 @import "colors";
 
+.AboutMe {
+  height: 100vh;
+}
+
 .Introduction {
   display: grid;
   grid-template-rows: auto auto;
@@ -7,49 +11,67 @@
   
   h2 {
     font-size: 2.5rem;
-    border-bottom: 3px solid white;
-    padding: 0px 2rem;
-    height: 5rem;
   }
 
   p {
     font-size: 1.2rem;
-    line-height: 1.5em;
-    text-align: center;
+    line-height: 1.5rem;
   }
 
   div {
     display: flex;
+    flex-direction: column;
     padding: 1rem 2rem;
     color: $color_light;
-    justify-content: center;
-
-    &:first-of-type {
+    
+    &:nth-of-type(1) {
       color: white;
-      text-align: right;
+    }
+    
+    &:nth-of-type(2) {
+      gap: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .Introduction {
+
+    h2 {
+      padding: 0px 2rem;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    div {
+
+      &:nth-of-type(1) {
+        text-align: center;
+      }
+
+      &:nth-of-type(2) {
+        padding-top: 2rem;
+        border-top: 3px solid white;
+      }
     }
   }
 }
 
 @media screen and (min-width: 750px) {
   .Introduction {
+    grid-template-rows: auto;
     grid-template-columns: 30% 70%;
     
-    h2 {
-      border-bottom: none;
-      padding: 0;
-    }
-
-    p {
-      text-align: left;
-    }
-
     div {
-      justify-content: flex-start;
 
-      &:first-of-type {
-        border-right: 3px solid white;
-        justify-content: flex-end;
+      &:nth-of-type(1) {
+        text-align: right;
+      }
+
+      &:nth-of-type(2) {
+        border-left: 3px solid white;
       }
     }
   }
