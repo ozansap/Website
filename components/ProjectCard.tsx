@@ -26,7 +26,7 @@ const ProjectCard: FC<props> = ({
       whileHover={{scale: 1.02}}
       onClick={() => setSelectedProject(id)}
     >
-      <motion.img src={thumbnail}/>
+      <motion.img src={thumbnail} draggable="false"/>
       <motion.div className={styles.Text}>
         <motion.div className={styles.Header}>
           <motion.h2>{name}</motion.h2>
