@@ -7,8 +7,9 @@
   flex-direction: column;
   gap: 2rem;
 
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
-  border: solid $color_accent1 3px;
   border-radius: 10px;
 
   img {
@@ -53,6 +54,7 @@
   h3 {
     font-size: 1.2rem;
     color: $color_accent3;
+    margin: 0 1rem;
   }
 }
 
