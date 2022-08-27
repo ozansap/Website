@@ -34,7 +34,7 @@ const Skills: FC<props> = ({
         
         <div className={styles.Levels}>
           {levels.map((l, i) => (
-            <div className={styles.Level} key={i}>
+            <div className={styles.Level} id={styles[l]} key={i}>
               <div className={styles.LevelTitle}>
                 {l}
               </div>
@@ -44,7 +44,6 @@ const Skills: FC<props> = ({
             </div>
           ))}
         </div>
-        
       </div>
     </div>
   )
