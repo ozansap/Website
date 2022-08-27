@@ -1,0 +1,39 @@
+@import "colors";
+
+.ProjectDetails {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Details {
+  position: relative;
+
+  background-color: $color_dark;
+  border-radius: 10px;
+  border: 3px solid $color_accent1;
+}
+
+@media screen and (max-width: 749px) {
+  .Details {
+    margin: 2rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .Details {
+    margin: 5rem;
+  }
+}

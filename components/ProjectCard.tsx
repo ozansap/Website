@@ -6,21 +6,26 @@ import styles from '../styles/ProjectCard.module.scss';
 
 
 type props = {
+  id: number,
   name: string,
   type: string,
   thumbnail: string,
   description: string,
   tags: string[],
   reverse: boolean,
-  setSelectedProject: Dispatch<SetStateAction<string>>
+  setSelectedProject: Dispatch<SetStateAction<number>>
 }
 
 const ProjectCard: FC<props> = ({
-  name, type, thumbnail, description, tags, reverse, setSelectedProject
+  id, name, type, thumbnail, description, tags, reverse, setSelectedProject
 }) => {
 
   return (
-    <motion.div className={combine(styles.ProjectCard, [reverse, styles.reverse])} whileHover={{scale: 1.02}}>
+    <motion.div 
+      className={combine(styles.ProjectCard, [reverse, styles.reverse])} 
+      whileHover={{scale: 1.02}}
+      onClick={() => setSelectedProject(id)}
+    >
       <motion.img src={thumbnail}/>
       <motion.div className={styles.Text}>
         <motion.div className={styles.Header}>
