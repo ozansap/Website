@@ -3,6 +3,28 @@ import Link from 'next/link';
 import { FC } from 'react';
 import styles from '../styles/Logo.module.scss';
 
+const vLogo = {
+  "y": {
+    top: "30vh",
+    left: "10vw",
+    fontSize: "5rem",
+  },
+  "yd": {
+    top: "30vh",
+    left: "10vw",
+    fontSize: "8rem",
+  },
+  "n": {
+    top: "-1vh",
+    left: "1vw",
+    fontSize: "0rem",
+  },
+  "nd": {
+    top: "0.5vh",
+    left: "3vw",
+    fontSize: "3rem",
+  }
+}
 
 type props = {
   activeSection: number,
@@ -12,29 +34,16 @@ type props = {
 const Logo: FC<props> = ({
   activeSection, width
 }) => {
-  const logoAnimation = () => {
-    return (activeSection == 0) ? 
-      {
-        top: "30vh",
-        left: "10vw",
-        fontSize: (width < 750) ? "5rem" : "8rem"
-      } : (width < 750) ?
-      {
-        top: "-1vh",
-        left: "1vw",
-        fontSize: "0rem"
-      } :
-      {
-        top: "0.5vh",
-        left: "3vw",
-        fontSize: "3rem"
-      }
-  }
+
+  let animate = activeSection === 0 ? "y" : "n";
+  if (width >= 750) animate += "d";
 
   return (
     <motion.div 
       className={styles.Logo}
-      animate={logoAnimation()}
+      animate={animate} 
+      variants={vLogo} 
+      initial={{top: "30vh", left: "10vw", fontSize: (width < 750) ? "5rem" : "8rem"}}
     >
       <Link href="/" replace>
         <a>OzanSap</a>

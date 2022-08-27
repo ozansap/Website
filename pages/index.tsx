@@ -52,14 +52,14 @@ const Page_Home: NextPage<props> = ({
       </Head>
 
       <main>
-        <Navigation 
+        {width && <Navigation 
           activeSection={activeSection}
           width={width}
-          />
-        <Logo 
+        />}
+        {width && <Logo 
           activeSection={activeSection}
           width={width}
-        />
+        />}
         <Main 
           activeSection={activeSection}
           setActiveSection={setActiveSection}
