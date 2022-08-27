@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styles from '../styles/AboutMe.module.scss';
 import Introduction from './Introduction';
+import Skills from './Skills';
 
 
 type props = {
@@ -13,7 +14,8 @@ const AboutMe: FC<props> = ({
 
   return (
     <section className={styles.AboutMe} id="about-me">
-      <Introduction activeSection={activeSection}/>
+      <Introduction activeSection={activeSection} />
+      <Skills />
     </section>
   )
 }
