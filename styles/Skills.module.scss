@@ -1,13 +1,19 @@
+$big: 80px;
+$medium: 60px;
+$small: 40px;
+
 .Skills {
   margin-top: 20rem;
 
   display: flex;
   flex-direction: column;
 
-  .Main {
-    height: 20rem;
-    
+  .Header {
     position: relative;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .Title {
       height: 100%;
@@ -24,6 +30,22 @@
       }
     }
 
+    .List {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(6, $small);
+      grid-template-rows: repeat(3, $small);
+      gap: 20px 20px;
+
+      div {
+        position: relative;
+      }
+    }
+  }
+
+  .Main {
+    height: 20rem;
+  
     .Levels {
       height: 100%;
       display: flex;
@@ -60,7 +82,7 @@
 
 @media screen and (min-width: 750px) {
   .Skills {
-    .Main {
+    .Header {
       .Title {
         h2 {
           font-size: 10rem;
@@ -68,6 +90,14 @@
         }
       }
 
+      .List {
+        grid-template-columns: repeat(8, $medium);
+        grid-template-rows: repeat(2, $medium);
+        gap: 20px 20px;
+      }
+    }
+
+    .Main {
       .Levels {
         .Level {
           .LevelTitle {
@@ -81,11 +111,17 @@
 
 @media screen and (min-width: 1100px) {
   .Skills {
-    .Main {
+    .Header {
       .Title {
         h2 {
           font-size: 15rem;
         }
+      }
+
+      .List {
+        grid-template-columns: repeat(8, $big);
+        grid-template-rows: repeat(2, $big);
+        gap: 30px 30px;
       }
     }
   }
