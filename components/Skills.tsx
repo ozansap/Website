@@ -9,7 +9,7 @@ const skills = [
     id: 1,
     name: "AWS",
     icon: "aws",
-    level: "Expert"
+    level: "Competent"
   },
   {
     id: 2,
@@ -21,13 +21,13 @@ const skills = [
     id: 3,
     name: "Docker",
     icon: "docker",
-    level: "Expert"
+    level: "Beginner"
   },
   {
     id: 4,
     name: "Figma",
     icon: "figma",
-    level: "Expert"
+    level: "Competent"
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const skills = [
     id: 6,
     name: "Heroku",
     icon: "heroku",
-    level: "Expert"
+    level: "Competent"
   },
   {
     id: 7,
@@ -63,25 +63,25 @@ const skills = [
     id: 10,
     name: "MongoDB",
     icon: "mongodb",
-    level: "Expert"
+    level: "Proficient"
   },
   {
     id: 11,
     name: "MySQL",
     icon: "mysql",
-    level: "Expert"
+    level: "Beginner"
   },
   {
     id: 12,
     name: "NextJS",
     icon: "nextjs",
-    level: "Expert"
+    level: "Proficient"
   },
   {
     id: 13,
     name: "NodeJS",
     icon: "nodejs",
-    level: "Expert"
+    level: "Proficient"
   },
   {
     id: 14,
@@ -99,7 +99,7 @@ const skills = [
     id: 16,
     name: "VueJS",
     icon: "vuejs",
-    level: "Expert"
+    level: "Beginner"
   },
 ]
 
