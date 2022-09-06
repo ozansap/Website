@@ -27,6 +27,7 @@ $small: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
+      pointer-events: none;
 
       h2 {
         font-size: 6rem;

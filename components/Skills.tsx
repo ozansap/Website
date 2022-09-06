@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FC, useState } from 'react';
 import styles from '../styles/Skills.module.scss';
+import Tooltip from './Tooltip';
 
 const skills = [
   {
@@ -129,12 +130,16 @@ const Skills: FC<props> = ({
     <div className={styles.Skills}>
       <div className={styles.Header}>
         <div className={styles.Title}>
-          <h2 onClick={moveAnimation}>Skills</h2>
+          <h2>Skills</h2>
         </div>
         <div className={styles.List}>
           {skills.map((s, i) => (
             <div className='center' key={i}>
-              {!s.sorted && <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>}
+              {!s.sorted && (
+                <Tooltip text={s.name}>
+                  <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
+                </Tooltip>
+              )}
             </div>
           ))}
         </div>
@@ -143,13 +148,17 @@ const Skills: FC<props> = ({
         <div className={styles.Levels}>
           {levels.map((l, i) => (
             <div className={styles.Level} id={styles[l]} key={i}>
-              <div className={styles.LevelTitle}>
+              <div className={styles.LevelTitle} onClick={moveAnimation}>
                 {l}
               </div>
               <div className={styles.LevelContent}>
                 {order.filter(x => x.level === l).map((s, j) => (
                   <div className='center' key={j}>
-                    {s.sorted && <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>}
+                    {s.sorted && (
+                      <Tooltip text={s.name}>
+                        <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
+                      </Tooltip>
+                    )}
                   </div>
                 ))}
               </div>
