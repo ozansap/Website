@@ -8,9 +8,14 @@ $small: 40px;
   display: flex;
   flex-direction: column;
 
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
   .Header {
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,16 +41,10 @@ $small: 40px;
       grid-template-columns: repeat(6, $small);
       grid-template-rows: repeat(3, $small);
       gap: 20px 20px;
-
-      div {
-        position: relative;
-      }
     }
   }
 
   .Main {
-    height: 20rem;
-  
     .Levels {
       height: 100%;
       display: flex;
@@ -56,7 +55,8 @@ $small: 40px;
     
       .Level {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         
         width: 100%;
         padding-top: 1rem;
@@ -73,6 +73,19 @@ $small: 40px;
         .LevelTitle {
           font-weight: bold;
           font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .LevelContent {
+          display: grid;
+          grid-template-columns: repeat(1, $small);
+          gap: 5px 0px;
+          margin-bottom: 1rem;
+
+          div {
+            width: $small;
+            height: $small;
+          }
         }
       }
     }
@@ -83,6 +96,8 @@ $small: 40px;
 @media screen and (min-width: 750px) {
   .Skills {
     .Header {
+      margin-bottom: 5rem;
+
       .Title {
         h2 {
           font-size: 10rem;
@@ -103,6 +118,16 @@ $small: 40px;
           .LevelTitle {
             font-size: 1.2rem;
           }
+
+          .LevelContent {
+            grid-template-columns: repeat(2, $medium);
+            gap: 10px 10px;
+
+            div {
+              width: $medium;
+              height: $medium;
+            }
+          }
         }
       }
     }
@@ -122,6 +147,22 @@ $small: 40px;
         grid-template-columns: repeat(8, $big);
         grid-template-rows: repeat(2, $big);
         gap: 30px 30px;
+      }
+    }
+
+    .Main {
+      .Levels {
+        .Level {
+          .LevelContent {
+            grid-template-columns: repeat(2, $big);
+            gap: 20px 20px;
+
+            div {
+              width: $big;
+              height: $big;
+            }
+          }
+        }
       }
     }
   }

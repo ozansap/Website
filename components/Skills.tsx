@@ -1,105 +1,104 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styles from '../styles/Skills.module.scss';
 
 const skills = [
   {
-    id: 1,
     name: "AWS",
     icon: "aws",
-    level: "Competent"
+    level: "Competent",
+    sorted: false
   },
   {
-    id: 2,
     name: "CSS",
     icon: "css",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 3,
     name: "Docker",
     icon: "docker",
-    level: "Beginner"
+    level: "Beginner",
+    sorted: false
   },
   {
-    id: 4,
     name: "Figma",
     icon: "figma",
-    level: "Competent"
+    level: "Competent",
+    sorted: false
   },
   {
-    id: 5,
     name: "Git",
     icon: "git",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 6,
     name: "Heroku",
     icon: "heroku",
-    level: "Competent"
+    level: "Competent",
+    sorted: false
   },
   {
-    id: 7,
     name: "HTML",
     icon: "html",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 8,
     name: "JavaScript",
     icon: "javascript",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 9,
     name: "Minecraft",
     icon: "minecraft",
-    level: "Expert"
+    level: "Proficient",
+    sorted: false
   },
   {
-    id: 10,
     name: "MongoDB",
     icon: "mongodb",
-    level: "Proficient"
+    level: "Proficient",
+    sorted: false
   },
   {
-    id: 11,
     name: "MySQL",
     icon: "mysql",
-    level: "Beginner"
+    level: "Beginner",
+    sorted: false
   },
   {
-    id: 12,
     name: "NextJS",
     icon: "nextjs",
-    level: "Proficient"
+    level: "Proficient",
+    sorted: false
   },
   {
-    id: 13,
     name: "NodeJS",
     icon: "nodejs",
-    level: "Proficient"
+    level: "Proficient",
+    sorted: false
   },
   {
-    id: 14,
     name: "React",
     icon: "react",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 15,
     name: "TypeScript",
     icon: "typescript",
-    level: "Expert"
+    level: "Expert",
+    sorted: false
   },
   {
-    id: 16,
     name: "VueJS",
     icon: "vuejs",
-    level: "Beginner"
+    level: "Beginner",
+    sorted: false
   },
 ]
 
@@ -112,17 +111,30 @@ type props = {
 const Skills: FC<props> = ({
 
 }) => {
+  const [order, setOrder] = useState([...skills].sort(() => Math.random() - 0.5));
+
+  const move = (i: number) => {
+    let newOrder = [...order];
+    newOrder[i].sorted = true;
+    setOrder(newOrder);
+  }
+
+  const moveAnimation = () => {
+    const stagger = 300;
+  
+    order.forEach((x, i) => setTimeout(() => move(i), i * stagger));
+  }
 
   return (
     <div className={styles.Skills}>
       <div className={styles.Header}>
         <div className={styles.Title}>
-          <h2>Skills</h2>
+          <h2 onClick={moveAnimation}>Skills</h2>
         </div>
         <div className={styles.List}>
           {skills.map((s, i) => (
             <div className='center' key={i}>
-              <Image src={`/icons/${s.icon}.png`} layout="fill"/>
+              {!s.sorted && <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>}
             </div>
           ))}
         </div>
@@ -135,7 +147,11 @@ const Skills: FC<props> = ({
                 {l}
               </div>
               <div className={styles.LevelContent}>
-
+                {order.filter(x => x.level === l).map((s, j) => (
+                  <div className='center' key={j}>
+                    {s.sorted && <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>}
+                  </div>
+                ))}
               </div>
             </div>
           ))}
