@@ -5,7 +5,7 @@ import styles from '../styles/Tooltip.module.scss';
 const vTooltip = {
   "show": {
     opacity: 1,
-    y: -20,
+    y: -30,
     transition: {
       duration: 0.3,
       ease: "anticipate"
