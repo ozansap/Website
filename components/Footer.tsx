@@ -39,6 +39,10 @@ const Footer: FC<props> = () => {
           <a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer">
             FontAwesome
           </a>
+          &nbsp;and&nbsp;
+          <a href="https://icons8.com/icons" target="_blank" rel="noopener noreferrer">
+            Icons8
+          </a>
         </p>
       </div>
     </footer>
