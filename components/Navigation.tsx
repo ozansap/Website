@@ -1,66 +1,48 @@
 import Link from 'next/link';
 import { FC } from 'react';
 import styles from '../styles/Navigation.module.scss';
-import { motion, TargetAndTransition } from "framer-motion";
+import { motion } from "framer-motion";
+import combine from '../lib/combine';
 
 
 type props = {
   activeSection: number,
-  width: number
 }
 
 const Navigation: FC<props> = ({
-  activeSection, width
+  activeSection
 }) => {
-  const buttonAnimation = (active: number): TargetAndTransition =>  {
-    return (active === activeSection) ?
-      {
-        y: "0.5rem",
-        color: "#1a1a1a"
-      } :
-      {
-        y: "0",
-        color: "#b3b3b3"
-      }
-  }
-
-  const highlightAnimation = (): TargetAndTransition => {
-    return {
-      x: `${(activeSection) * ((width > 1100 ? 5 : 2) + 8)}rem`
-    }
-  }
 
   return (
     <div className={styles.Navigation + " mobile-hidden"}>
       <div className={styles.Buttons}>
-        <Link href="/" replace>
-          <motion.div 
-            className={styles.Button} 
-            animate={buttonAnimation(0)}
-          >
-            <a>Welcome</a>
+          <motion.div className={styles.Button}>
+            <Link href="/" replace>
+              <motion.a className={combine([activeSection == 0, styles.active])}>Welcome</motion.a>
+            </Link>
+            {activeSection === 0 && (
+              <motion.div className={styles.Highlight} layoutId="highlight" />
+            )}
           </motion.div>
-        </Link>
-        <Link href="/#about-me" replace>
-          <motion.div
-            className={styles.Button}
-            animate={buttonAnimation(1)}
-          >
-            <a>About Me</a>
+
+          <motion.div className={styles.Button}>
+            <Link href="/#about-me" replace>
+              <motion.a className={combine([activeSection == 1, styles.active])}>About Me</motion.a>
+            </Link>
+            {activeSection === 1 && (
+              <motion.div className={styles.Highlight} layoutId="highlight" />
+            )}
           </motion.div>
-        </Link>
-        <Link href="/#projects" replace>
-          <motion.div 
-            className={styles.Button} 
-            animate={buttonAnimation(2)}
-          >
-            <a>Projects</a>
+          
+          <motion.div className={styles.Button}>
+            <Link href="/#projects" replace>
+              <motion.a className={combine([activeSection == 2, styles.active])}>Projects</motion.a>
+            </Link>
+            {activeSection === 2 && (
+              <motion.div className={styles.Highlight} layoutId="highlight" />
+            )}
           </motion.div>
-        </Link>
       </div>
-  
-      <motion.div className={styles.Highlight} animate={highlightAnimation()} />
-      <div className={styles.Border} />
     </div>
   )
 }
