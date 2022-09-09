@@ -1,6 +1,8 @@
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpRightFromSquare, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { FC, useState } from 'react';
 import combine from '../lib/combine';
 import styles from '../styles/ProjectCard.module.scss';
@@ -74,9 +76,30 @@ const ProjectCard: FC<props> = ({
           <motion.div></motion.div>
         </motion.div>
       </motion.div>
-      <motion.div className={styles.Details}>
+      {expanded && (
+        <motion.div className={styles.Details}>
+          <motion.div className={styles.Links}>
+            <Link href="/" replace>
+              <a className={styles.Visit}>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                <motion.h3>Visit</motion.h3>
+              </a>
+            </Link>
+            <Link href="/" replace>
+              <a className={styles.Github}>
+                <FontAwesomeIcon icon={faGithub}/>
+                <motion.h3>Source</motion.h3>
+              </a>
+            </Link>
+          </motion.div>
+          <motion.div className={styles.Explanation}>
+            
+          </motion.div>
+          <motion.div className={styles.Exploration}>
 
-      </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.div>      
   )
 }
