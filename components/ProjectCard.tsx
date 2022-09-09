@@ -27,38 +27,55 @@ const ProjectCard: FC<props> = ({
       whileHover={{scale: 1.02}}
       onClick={() => setExpanded(!expanded)}
     >
-      <motion.img src={thumbnail} draggable="false"/>
-      <motion.div className={styles.Text}>
-        <motion.div className={combine(styles.Header, "mobile-only")}>
-          <motion.div className={styles.Info}>
+      <motion.div className={styles.Main}>
+        <motion.img src={thumbnail} draggable="false"/>
+        <motion.div className={styles.Text}>
+          <motion.div className={combine(styles.Header, "mobile-only")}>
+            <motion.div className={styles.Info}>
+              <motion.h2>{name}</motion.h2>
+              <motion.h3>{type}</motion.h3>
+            </motion.div>
+            <motion.div>
+              {favourite && (
+                <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                  ★ Favourite
+                </motion.h3>
+              )}
+            </motion.div>
+          </motion.div>
+          <motion.div className={combine(styles.Header, "mobile-hidden")}>
             <motion.h2>{name}</motion.h2>
+            <motion.div>
+              {favourite && (
+                <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                  ★ Favourite
+                </motion.h3>
+              )}
+            </motion.div>
             <motion.h3>{type}</motion.h3>
           </motion.div>
-          <motion.div>
-            {favourite && (
-              <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
-                ★ Favourite
-              </motion.h3>
-            )}
+          <motion.p>{description}</motion.p>
+          <motion.div className={styles.Tags}>
+            {tags.map((t, i) => (
+              <motion.p key={i}>{t}</motion.p>
+            ))}
           </motion.div>
         </motion.div>
-        <motion.div className={combine(styles.Header, "mobile-hidden")}>
-          <motion.h2>{name}</motion.h2>
-          <motion.div>
-            {favourite && (
-              <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
-                ★ Favourite
-              </motion.h3>
-            )}
-          </motion.div>
-          <motion.h3>{type}</motion.h3>
+      </motion.div>
+      <motion.div className={styles.Expander}>
+        <motion.div>
+          <motion.div></motion.div>
+          <motion.div></motion.div>
         </motion.div>
-        <motion.p>{description}</motion.p>
-        <motion.div className={styles.Tags}>
-          {tags.map((t, i) => (
-            <motion.p key={i}>{t}</motion.p>
-          ))}
+        {expanded && <FontAwesomeIcon icon={faChevronUp} />}
+        {!expanded && <FontAwesomeIcon icon={faChevronDown} />}
+        <motion.div>
+          <motion.div></motion.div>
+          <motion.div></motion.div>
         </motion.div>
+      </motion.div>
+      <motion.div className={styles.Details}>
+
       </motion.div>
     </motion.div>      
   )
