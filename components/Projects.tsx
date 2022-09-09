@@ -1,3 +1,4 @@
+import { LayoutGroup, motion } from 'framer-motion';
 import { CSSProperties, FC } from 'react';
 import styles from '../styles/Projects.module.scss';
 import InfiniteScroll from './InfiniteScroll';
@@ -86,13 +87,15 @@ const Projects: FC<props> = () => {
       />
 
       <div className={styles.List}>
-        {[...projects].reverse().map((p, i) => (
-          <ProjectCard
-            key={i}
-            {...p}
-            reverse={!!(i % 2)}
-          />
-        ))}
+        <LayoutGroup>
+          {[...projects].reverse().map((p, i) => (
+            <ProjectCard
+              key={i}
+              {...p}
+              reverse={!!(i % 2)}
+            />
+          ))}
+        </LayoutGroup>
       </div>
     </section>
   )

@@ -27,71 +27,79 @@ const ProjectCard: FC<props> = ({
 
   return (
     <motion.div 
+      layout
       className={combine(styles.ProjectCard, [reverse, styles.reverse])} 
       whileHover={{scale: 1.02}}
       onClick={() => setExpanded(!expanded)}
+      style={{borderRadius:"10px", boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 20px"}}
+      transition={{}}
     >
-      <motion.div className={styles.Main}>
-        <motion.img src={thumbnail} draggable="false"/>
-        <motion.div className={styles.Text}>
-          <motion.div className={combine(styles.Header, "mobile-only")}>
-            <motion.div className={styles.Info}>
-              <motion.h2>{name}</motion.h2>
-              <motion.h3>{type}</motion.h3>
+      <motion.div layout className={styles.Main}>
+        <motion.img layout src={thumbnail} draggable="false"/>
+        <motion.div layout className={styles.Text}>
+          <motion.div layout className={combine(styles.Header, "mobile-only")}>
+            <motion.div layout className={styles.Info}>
+              <motion.h2 layout>{name}</motion.h2>
+              <motion.h3 layout>{type}</motion.h3>
             </motion.div>
-            <motion.div>
+            <motion.div layout>
               {favourite && (
-                <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                <motion.h3 layout className={combine(styles.Favourite, [favourite, styles.active])}>
                   ★ Favourite
                 </motion.h3>
               )}
             </motion.div>
           </motion.div>
-          <motion.div className={combine(styles.Header, "mobile-hidden")}>
-            <motion.h2>{name}</motion.h2>
-            <motion.div>
+          <motion.div layout className={combine(styles.Header, "mobile-hidden")}>
+            <motion.h2 layout>{name}</motion.h2>
+            <motion.div layout>
               {favourite && (
-                <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                <motion.h3 layout className={combine(styles.Favourite, [favourite, styles.active])}>
                   ★ Favourite
                 </motion.h3>
               )}
             </motion.div>
-            <motion.h3>{type}</motion.h3>
+            <motion.h3 layout>{type}</motion.h3>
           </motion.div>
-          <motion.p>{description}</motion.p>
-          <motion.div className={styles.Tags}>
+          <motion.p layout>{description}</motion.p>
+          <motion.div layout className={styles.Tags}>
             {tags.map((t, i) => (
-              <motion.p key={i}>{t}</motion.p>
+              <motion.p layout key={i}>{t}</motion.p>
             ))}
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div className={styles.Expander}>
-        <motion.div>
-          <motion.div></motion.div>
-          <motion.div></motion.div>
+      <motion.div layout className={styles.Expander}>
+        <motion.div layout>
+          <motion.div layout></motion.div>
+          <motion.div layout></motion.div>
         </motion.div>
         {expanded && <FontAwesomeIcon icon={faChevronUp} />}
         {!expanded && <FontAwesomeIcon icon={faChevronDown} />}
-        <motion.div>
-          <motion.div></motion.div>
-          <motion.div></motion.div>
+        <motion.div layout>
+          <motion.div layout></motion.div>
+          <motion.div layout></motion.div>
         </motion.div>
       </motion.div>
       {expanded && (
-        <motion.div className={styles.Expansion}>
+        <motion.div 
+          className={styles.Expansion}
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{delay: 0.2}}
+        >
           <motion.div className={styles.Links}>
             <Link href="/" replace>
-              <a className={styles.Visit}>
+              <motion.a className={styles.Visit}>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                 <motion.h3>Visit</motion.h3>
-              </a>
+              </motion.a>
             </Link>
             <Link href="/" replace>
-              <a className={styles.Github}>
+              <motion.a className={styles.Github}>
                 <FontAwesomeIcon icon={faGithub}/>
                 <motion.h3>Source</motion.h3>
-              </a>
+              </motion.a>
             </Link>
           </motion.div>
           <motion.div className={styles.Details}>
