@@ -113,7 +113,7 @@
     }
   }
 
-  .Details {
+  .Expansion {
     margin-top: 1rem;
     padding-bottom: 15px;
 
@@ -136,7 +136,7 @@
 
         color: white;
         background-color: $color_dark;
-        box-shadow: inset 0px 0px 10px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 
         transition: 0.1s;
 
@@ -145,6 +145,38 @@
           background-color: white;
           box-shadow: 0px 0px 10px white;
         }
+      }
+    }
+
+    .Details {
+      display: flex;
+      width: 100%;
+      margin-top: 4rem;
+
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          margin-bottom: 2rem;
+          font-size: 1.2em;
+        }
+
+        p {
+          color: $color_light;
+        }
+      }
+
+      .Explanation {
+        padding: 1rem 5rem 0 0;
+        
+        align-items: flex-end;
+        border-right: 3px solid white;
+      }
+
+      .Exploration {
+        padding: 1rem 0 0 5rem;
       }
     }
   }

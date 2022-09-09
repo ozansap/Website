@@ -15,11 +15,13 @@ type props = {
   description: string,
   tags: string[],
   favourite: boolean,
+  explanation: string,
+  exploration: string,
   reverse: boolean,
 }
 
 const ProjectCard: FC<props> = ({
-  name, type, thumbnail, description, tags, favourite, reverse
+  name, type, thumbnail, description, tags, favourite, explanation, exploration, reverse
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -77,7 +79,7 @@ const ProjectCard: FC<props> = ({
         </motion.div>
       </motion.div>
       {expanded && (
-        <motion.div className={styles.Details}>
+        <motion.div className={styles.Expansion}>
           <motion.div className={styles.Links}>
             <Link href="/" replace>
               <a className={styles.Visit}>
@@ -92,11 +94,15 @@ const ProjectCard: FC<props> = ({
               </a>
             </Link>
           </motion.div>
-          <motion.div className={styles.Explanation}>
-            
-          </motion.div>
-          <motion.div className={styles.Exploration}>
-
+          <motion.div className={styles.Details}>
+            <motion.div className={styles.Explanation}>
+              <motion.h3>Explanation</motion.h3>
+              <motion.p>{explanation}</motion.p>
+            </motion.div>
+            <motion.div className={styles.Exploration}>
+              <motion.h3>Exploration</motion.h3>
+              <motion.p>{exploration}</motion.p>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

@@ -66,8 +66,8 @@ const projects = [
     description: "asd",
     tags: [],
     favourite: true,
-    explanation: "",
-    exploration: ""
+    explanation: "asd asd asd as das d  asd as d asd a sd asd",
+    exploration: "asd as d asd  a s d  w eq we qw e 123 12 31 "
   },
 ]
 
