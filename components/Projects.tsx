@@ -86,7 +86,7 @@ const Projects: FC<props> = () => {
       />
 
       <div className={styles.List}>
-        {projects.map((p, i) => (
+        {[...projects].reverse().map((p, i) => (
           <ProjectCard
             key={i}
             {...p}
