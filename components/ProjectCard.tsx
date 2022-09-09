@@ -1,35 +1,56 @@
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { FC, useState } from 'react';
 import combine from '../lib/combine';
 import styles from '../styles/ProjectCard.module.scss';
 
 
 type props = {
-  id: number,
   name: string,
   type: string,
   thumbnail: string,
   description: string,
   tags: string[],
+  favourite: boolean,
   reverse: boolean,
-  setSelectedProject: Dispatch<SetStateAction<number>>
 }
 
 const ProjectCard: FC<props> = ({
-  id, name, type, thumbnail, description, tags, reverse, setSelectedProject
+  name, type, thumbnail, description, tags, favourite, reverse
 }) => {
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div 
       className={combine(styles.ProjectCard, [reverse, styles.reverse])} 
       whileHover={{scale: 1.02}}
-      onClick={() => setSelectedProject(id)}
+      onClick={() => setExpanded(!expanded)}
     >
       <motion.img src={thumbnail} draggable="false"/>
       <motion.div className={styles.Text}>
-        <motion.div className={styles.Header}>
+        <motion.div className={combine(styles.Header, "mobile-only")}>
+          <motion.div className={styles.Info}>
+            <motion.h2>{name}</motion.h2>
+            <motion.h3>{type}</motion.h3>
+          </motion.div>
+          <motion.div>
+            {favourite && (
+              <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                ★ Favourite
+              </motion.h3>
+            )}
+          </motion.div>
+        </motion.div>
+        <motion.div className={combine(styles.Header, "mobile-hidden")}>
           <motion.h2>{name}</motion.h2>
+          <motion.div>
+            {favourite && (
+              <motion.h3 className={combine(styles.Favourite, [favourite, styles.active])}>
+                ★ Favourite
+              </motion.h3>
+            )}
+          </motion.div>
           <motion.h3>{type}</motion.h3>
         </motion.div>
         <motion.p>{description}</motion.p>
