@@ -69,18 +69,6 @@ const ProjectCard: FC<props> = ({
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div layout className={styles.Expander}>
-        <motion.div layout>
-          <motion.div layout></motion.div>
-          <motion.div layout></motion.div>
-        </motion.div>
-        {expanded && <FontAwesomeIcon icon={faChevronUp} />}
-        {!expanded && <FontAwesomeIcon icon={faChevronDown} />}
-        <motion.div layout>
-          <motion.div layout></motion.div>
-          <motion.div layout></motion.div>
-        </motion.div>
-      </motion.div>
       {expanded && (
         <motion.div 
           className={styles.Expansion}

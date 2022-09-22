@@ -6,7 +6,6 @@
 
   background-color: rgba(255,255,255,0.05);
   padding: 20px;
-  padding-bottom: 5px;
 
   user-select: none;
 
@@ -87,32 +86,8 @@
     }
   }
 
-  .Expander {
-    display: flex;
-    gap: 2rem;
-
-    svg {
-      flex-grow: 1;
-      max-width: 50px;
-    }
-
-    > div {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-
-      > div {
-        height: 100%;
-
-        &:nth-of-type(1) {
-          border-bottom: 3px solid white;
-        }
-      }
-    }
-  }
-
   .Expansion {
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding-bottom: 15px;
 
     .Links {
@@ -205,6 +180,8 @@
     }
 
     .Expansion {
+      margin-top: 3rem;
+
       .Links {
         svg {
           width: 40px;
