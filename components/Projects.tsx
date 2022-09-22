@@ -53,8 +53,8 @@ const projects = [
     type: "Frontend",
     thumbnail: "/thumbnails/sneakers.png",
     preview: "/previews/sneakers.gif",
-    description: "asd",
-    tags: [],
+    description: "A web app to check if you should wear your sneakers or boots outside",
+    tags: ["React", "TypeScript", "SCSS", "API", "WebApp", "Responsive"],
     favourite: false,
     explanation: "",
     exploration: ""
@@ -64,11 +64,11 @@ const projects = [
     type: "Frontend",
     thumbnail: "/thumbnails/portfolio.png",
     preview: "/previews/maze.gif",
-    description: "asd",
-    tags: [],
+    description: "Personal portfolio website made with NextJS.\nYou are in this website right now!",
+    tags: ["NextJS", "React", "TypeScript", "SCSS", "Responsive"],
     favourite: true,
-    explanation: "asd asd asd as das d  asd as d asd a sd asd",
-    exploration: "asd as d asd  a s d  w eq we qw e 123 12 31 "
+    explanation: "",
+    exploration: ""
   },
 ]
 
