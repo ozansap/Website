@@ -128,21 +128,8 @@ const Skills: FC<props> = ({
 
   return (
     <div className={styles.Skills}>
-      <div className={styles.Header}>
-        <div className={styles.Title}>
-          <h2>Skills</h2>
-        </div>
-        <div className={styles.List}>
-          {skills.map((s, i) => (
-            <div className='center' key={i}>
-              {!s.sorted && (
-                <Tooltip text={s.name}>
-                  <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
-                </Tooltip>
-              )}
-            </div>
-          ))}
-        </div>
+      <div className={styles.Title}>
+        <h2>Skills</h2>
       </div>
       <div className={styles.Main}>
         <div className={styles.Levels}>
@@ -162,6 +149,17 @@ const Skills: FC<props> = ({
                   </div>
                 ))}
               </div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.Holder}>
+          {skills.map((s, i) => (
+            <div className='center' key={i}>
+              {!s.sorted && (
+                <Tooltip text={s.name}>
+                  <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
+                </Tooltip>
+              )}
             </div>
           ))}
         </div>

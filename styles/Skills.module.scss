@@ -13,39 +13,23 @@ $small: 40px;
     width: 100%;
   }
 
-  .Header {
-    position: relative;
-    margin-bottom: 3rem;
+  .Title {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 
-    .Title {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      pointer-events: none;
-
-      h2 {
-        font-size: 6rem;
-        letter-spacing: 1rem;
-        opacity: 0.1;
-      }
-    }
-
-    .List {
-      height: 100%;
-      display: grid;
-      grid-template-columns: repeat(6, $small);
-      grid-template-rows: repeat(3, $small);
-      gap: 20px 20px;
+    h2 {
+      font-size: 6rem;
+      letter-spacing: 1rem;
+      opacity: 0.1;
     }
   }
 
   .Main {
+    position: relative;
+  
     .Levels {
       height: 100%;
       display: flex;
@@ -61,33 +45,43 @@ $small: 40px;
         
         width: 100%;
         padding-top: 1rem;
-
+  
         background-color: rgba(255,255,255,0.05);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
         border-radius: 5px;
-
+  
         &#Expert {
           background-color: rgba(255, 215, 0, 0.35);
           box-shadow: rgba(255, 215, 0, 0.35) 0px 0px 10px;
         }
-
+  
         .LevelTitle {
           font-weight: bold;
           font-size: 0.9rem;
           margin-bottom: 1rem;
         }
-
+  
         .LevelContent {
           display: grid;
           grid-template-columns: repeat(1, $small);
           gap: 5px 0px;
           margin-bottom: 1rem;
-
+  
           div {
             width: $small;
             height: $small;
           }
         }
+      }
+    }
+  
+    .Holder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+  
+      * {
+        position: absolute;
       }
     }
   }
@@ -96,20 +90,10 @@ $small: 40px;
 
 @media screen and (min-width: 750px) {
   .Skills {
-    .Header {
-      margin-bottom: 5rem;
-
-      .Title {
-        h2 {
-          font-size: 10rem;
-          letter-spacing: 2rem;
-        }
-      }
-
-      .List {
-        grid-template-columns: repeat(8, $medium);
-        grid-template-rows: repeat(2, $medium);
-        gap: 20px 20px;
+    .Title {
+      h2 {
+        font-size: 10rem;
+        letter-spacing: 2rem;
       }
     }
 
@@ -119,11 +103,11 @@ $small: 40px;
           .LevelTitle {
             font-size: 1.2rem;
           }
-
+  
           .LevelContent {
             grid-template-columns: repeat(2, $medium);
             gap: 10px 10px;
-
+  
             div {
               width: $medium;
               height: $medium;
@@ -137,17 +121,9 @@ $small: 40px;
 
 @media screen and (min-width: 1100px) {
   .Skills {
-    .Header {
-      .Title {
-        h2 {
-          font-size: 15rem;
-        }
-      }
-
-      .List {
-        grid-template-columns: repeat(8, $big);
-        grid-template-rows: repeat(2, $big);
-        gap: 30px 30px;
+    .Title {
+      h2 {
+        font-size: 15rem;
       }
     }
 
@@ -157,7 +133,7 @@ $small: 40px;
           .LevelContent {
             grid-template-columns: repeat(2, $big);
             gap: 20px 20px;
-
+  
             div {
               width: $big;
               height: $big;
