@@ -32,7 +32,7 @@ const skills = [
   {
     name: "Git",
     icon: "git",
-    level: "Expert",
+    level: "Proficient",
     sorted: false
   },
   {
