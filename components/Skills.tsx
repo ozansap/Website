@@ -156,9 +156,7 @@ const Skills: FC<props> = ({
           {skills.map((s, i) => (
             <div className='center' key={i}>
               {!s.sorted && (
-                <Tooltip text={s.name}>
-                  <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
-                </Tooltip>
+                <motion.img src={`/icons/${s.icon}.png`} layoutId={s.name}/>
               )}
             </div>
           ))}
