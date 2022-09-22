@@ -1,5 +1,5 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUpRightFromSquare, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -15,8 +15,8 @@ type props = {
   description: string,
   tags: string[],
   favourite: boolean,
-  explanation: string,
-  exploration: string,
+  explanation: Array<string>,
+  exploration: Array<string>,
   reverse: boolean,
 }
 
@@ -93,11 +93,15 @@ const ProjectCard: FC<props> = ({
           <motion.div className={styles.Details}>
             <motion.div className={styles.Explanation}>
               <motion.h3>Explanation</motion.h3>
-              <motion.p>{explanation}</motion.p>
+              {explanation.map((e, i) => (
+                <motion.p key={i}>{e}</motion.p>
+              ))}
             </motion.div>
             <motion.div className={styles.Exploration}>
               <motion.h3>Exploration</motion.h3>
-              <motion.p>{exploration}</motion.p>
+              {exploration.map((e, i) => (
+                <motion.p key={i}>{e}</motion.p>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>

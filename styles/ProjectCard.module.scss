@@ -90,7 +90,6 @@
 
   .Expansion {
     margin-top: 2rem;
-    padding-bottom: 15px;
 
     .Links {
       display: flex;
@@ -144,6 +143,7 @@
           color: $color_light;
           white-space: pre-line;
           line-height: 1.5em;
+          margin-bottom: 1em;
         }
       }
 
