@@ -4,6 +4,7 @@ import styles from '../styles/Tooltip.module.scss';
 
 const vTooltip = {
   "show": {
+    pointerEvents: "auto" as "auto",
     opacity: 1,
     y: -30,
     transition: {
@@ -12,6 +13,7 @@ const vTooltip = {
     }
   },
   "hide": {
+    pointerEvents: "none" as "none",
     opacity: 0,
     y: 0,
     transition: {
@@ -22,21 +24,23 @@ const vTooltip = {
 }
 
 type props = {
-  text: string;
+  text?: string;
   children: JSX.Element;
 }
 
-const Tooltip: React.FC<props> = ({
+const Tooltip: FC<props> = ({
   text, children
 }) => {
 
   return (
     <motion.div className={styles.Container} initial="hide" whileHover="show" animate="hide">
-      <motion.div className={styles.Tooltip} variants={vTooltip}>
-        {text}
-      </motion.div>
+      {text && (
+        <motion.p className={styles.Tooltip} variants={vTooltip}>
+          {text}
+        </motion.p>
+      )}
       {children}
-    </motion.div>    
+    </motion.div>
   )
 }
 
