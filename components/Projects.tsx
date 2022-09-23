@@ -23,6 +23,8 @@ const projects = [
     description: "Impulse based 2D physics playground made with vanilla HTML, CSS and JS",
     tags: ["Vanilla", "HTML", "CSS", "JavaScript", "WebApp", "Canvas"],
     favourite: false,
+    visit: "https://physics.ozansap.com",
+    source: "https://github.com/ozansap/Physics",
     explanation: [
       "This website uses [HTML Canvas] to draw on the screen",
       "Every frame, the physics gets calculated, updated and drawn",
@@ -46,6 +48,8 @@ const projects = [
     description: "Visualization of maze generation and solution using randomized depth first search",
     tags: ["React", "Responsive", "SCSS", "Data Structures & Algorithms"],
     favourite: false,
+    visit: "https://maze.ozansap.com",
+    source: "https://github.com/ozansap/Maze",
     explanation: [
       "This website uses [depth first search algorithm with a stack]",
       "Maze is stored as a [two dimensional array]",
@@ -71,6 +75,8 @@ const projects = [
     description: "A web app to plan, organize and track your habits and responsibilities",
     tags: ["React", "TypeScript", "SCSS", "WebApp"],
     favourite: true,
+    visit: "https://planner.ozansap.com",
+    source: "https://github.com/ozansap/Planner",
     explanation: [
       "This website uses the [localstorage API] to store the data locally",
       "Tasks can be completed, edited and created",
@@ -94,6 +100,8 @@ const projects = [
     description: "A simple web app to check if you should wear your sneakers or boots outside",
     tags: ["React", "TypeScript", "SCSS", "API", "WebApp", "Responsive"],
     favourite: false,
+    visit: "https://sneakers.ozansap.com",
+    source: "https://github.com/ozansap/Sneakers",
     explanation: [
       "This website uses the [openweathermap API] to get weather data based on location",
       "Sneakers can be worn if there is no past or soon forecasted precipitation",
@@ -116,6 +124,8 @@ const projects = [
     description: "Personal portfolio website made with NextJS\nYou are in this website right now!",
     tags: ["NextJS", "React", "TypeScript", "SCSS", "Framer Motion", "Responsive"],
     favourite: true,
+    visit: "https://ozansap.com",
+    source: "https://github.com/ozansap/Website",
     explanation: [
       "This website is a compilation of all my previous knowledge and experiences",
       "You can learn more about me and my dev adventures",

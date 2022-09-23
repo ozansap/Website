@@ -16,13 +16,15 @@ type props = {
   description: string,
   tags: string[],
   favourite: boolean,
+  visit: string,
+  source: string,
   explanation: Array<string>,
   exploration: Array<string>,
   reverse: boolean,
 }
 
 const ProjectCard: FC<props> = ({
-  name, type, thumbnail, description, tags, favourite, explanation, exploration, reverse
+  name, type, thumbnail, description, tags, favourite, visit, source, explanation, exploration, reverse
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -78,13 +80,13 @@ const ProjectCard: FC<props> = ({
           transition={{delay: 0.2}}
         >
           <motion.div className={styles.Links}>
-            <Link href="/" replace>
+            <Link href={visit} replace>
               <motion.a className={styles.Visit}>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                 <motion.h3>Visit</motion.h3>
               </motion.a>
             </Link>
-            <Link href="/" replace>
+            <Link href={source} replace>
               <motion.a className={styles.Github}>
                 <FontAwesomeIcon icon={faGithub}/>
                 <motion.h3>Source</motion.h3>

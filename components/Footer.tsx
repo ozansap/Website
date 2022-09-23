@@ -13,7 +13,7 @@ const contacts = [
   },
   {
     icon: faGithub,
-    link: "https://github.com/Swagnemitee"
+    link: "https://github.com/ozansap"
   },
   {
     icon: faLinkedin,
