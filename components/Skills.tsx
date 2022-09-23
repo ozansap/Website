@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
+import useIntersectionObserver from '../lib/useIntersectionObserver';
 import styles from '../styles/Skills.module.scss';
 import Tooltip from './Tooltip';
 
@@ -113,6 +113,9 @@ const Skills: FC<props> = ({
 
 }) => {
   const [order, setOrder] = useState([...skills].sort(() => Math.random() - 0.5));
+  const [ordered, setOrdered] = useState(false);
+  const ref = useRef(null);
+  const intersecting = useIntersectionObserver(ref);
 
   const move = (i: number) => {
     let newOrder = [...order];
@@ -124,7 +127,14 @@ const Skills: FC<props> = ({
     const stagger = 300;
   
     order.forEach((x, i) => setTimeout(() => move(i), i * stagger));
+    setOrdered(true);
   }
+
+  useEffect(() => {
+    if (!intersecting || ordered) return;
+
+    setTimeout(moveAnimation, 500);
+  }, [intersecting])
 
   return (
     <div className={styles.Skills}>
@@ -162,6 +172,7 @@ const Skills: FC<props> = ({
           ))}
         </div>
       </div>
+      <div ref={ref} id="intersectionObserver" />
     </div>
   )
 }
