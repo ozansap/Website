@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FC, useState } from 'react';
 import combine from '../lib/combine';
+import markdown from '../lib/markdown';
 import styles from '../styles/ProjectCard.module.scss';
 
 
@@ -94,13 +95,13 @@ const ProjectCard: FC<props> = ({
             <motion.div className={styles.Explanation}>
               <motion.h3>Explanation</motion.h3>
               {explanation.map((e, i) => (
-                <motion.p key={i}>{e}</motion.p>
+                <motion.p key={i} dangerouslySetInnerHTML={{__html: markdown(e)}} />
               ))}
             </motion.div>
             <motion.div className={styles.Exploration}>
               <motion.h3>Exploration</motion.h3>
               {exploration.map((e, i) => (
-                <motion.p key={i}>{e}</motion.p>
+                <motion.p key={i} dangerouslySetInnerHTML={{__html: markdown(e)}} />
               ))}
             </motion.div>
           </motion.div>
