@@ -201,13 +201,13 @@
         margin-top: 4rem;
 
         .Explanation {
-          padding: 1rem 5rem 0 2rem;
+          padding: 1rem 3rem 0 1rem;
           border-right: 3px solid white;
           margin: 0;
         }
   
         .Exploration {
-          padding: 1rem 2rem 0 5rem;
+          padding: 1rem 1rem 0 3rem;
         }
       }
     }
@@ -220,6 +220,18 @@
       img {
         width: 350px;
         height: 250px;
+      }
+    }
+
+    .Expansion {
+      .Details {
+        .Explanation {
+          padding: 1rem 5rem 0 2rem;
+        }
+
+        .Exploration {
+          padding: 1rem 2rem 0 5rem;
+        }
       }
     }
   }
