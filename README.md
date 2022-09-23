@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website
 
-## Getting Started
+This is my personal website where I showcase my projects and skills.
 
-First, run the development server:
+This website not only shows what I have learned but also the road I took to get to where I am today. The `Projects` section is in a reverse chronological order so by following the trail, you can see my advancements and progress. I also tried to reflect on the problems I encountered and how I solved them in `Exploration` section of each project. Hopefully, this website will give insight as to what kind of a developer I am and maybe inspire/guide new developers.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+If you want to get in touch, do not hesitate to contact me at [me@ozansap.com](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Planned Features
+- [ ] - An option to change the display language
+- [ ] - Foldable navigation bar for mobile
+- [ ] - Backend projects in `Projects` section
+- [ ] - Background images or other visual content
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Significance
+While creating this site, I wanted to use as many skills and tricks as I could that I learned along the way. This helped me remember solutions to problems I faced previously and will hopefully ensure that I face less of them in the future. Combining my past and new knowledge allowed me to understand these solutions in a deeper level.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I chose to use NextJS in addition to React. I did not make full use of routing and server-side-rendering in this website because it is basically static and single page. But gaining experience in a simpler website allowed me to learn the features of NextJS without having to solve other, distracting, problems. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## I Used
+* [NextJS](https://nextjs.org/) to have routing and server-side-rendering on top of React
+* [React](https://www.npmjs.com/package/react) to have a more streamlined development experience
+* [Framer Motion](https://www.npmjs.com/package/framer-motion) to create easy and dynamic animations
+* [TypeScript](https://www.npmjs.com/package/typescript) to make JavaScript type enforced
+* [sass](https://www.npmjs.com/package/sass) to have cleaner CSS files
