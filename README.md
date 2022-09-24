@@ -4,6 +4,8 @@ This is my personal website where I showcase my projects and skills.
 
 This website not only shows what I have learned but also the road I took to get to where I am today. The `Projects` section is in a reverse chronological order so by following the trail, you can see my advancements and progress. I also tried to reflect on the problems I encountered and how I solved them in `Exploration` section of each project. Hopefully, this website will give insight as to what kind of a developer I am and maybe inspire/guide new developers.
 
+The website is hosted at [ozansap.com](https://ozansap.com).
+
 If you want to get in touch, do not hesitate to contact me at [me@ozansap.com](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
 ## Planned Features
