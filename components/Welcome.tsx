@@ -1,7 +1,7 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion, TargetAndTransition, useAnimation } from 'framer-motion';
-import { FC, useEffect } from 'react';
+import { motion, TargetAndTransition } from 'framer-motion';
+import { FC } from 'react';
 import styles from '../styles/Welcome.module.scss';
 
 
