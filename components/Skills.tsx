@@ -117,24 +117,22 @@ const Skills: FC<props> = ({
   const ref = useRef(null);
   const intersecting = useIntersectionObserver(ref);
 
-  const move = (i: number) => {
-    let newOrder = [...order];
-    newOrder[i].sorted = true;
-    setOrder(newOrder);
-  }
-
-  const moveAnimation = () => {
-    const stagger = 300;
-  
-    order.forEach((x, i) => setTimeout(() => move(i), i * stagger));
-    setOrdered(true);
-  }
-
   useEffect(() => {
     if (!intersecting || ordered) return;
 
-    setTimeout(moveAnimation, 500);
-  }, [intersecting])
+    const move = (i: number) => {
+      let newOrder = [...order];
+      newOrder[i].sorted = true;
+      setOrder(newOrder);
+    }
+
+    setTimeout(() => {
+      setOrdered(true);
+
+      const stagger = 300;
+      order.forEach((x, i) => setTimeout(() => move(i), i * stagger));
+    }, 500);
+  }, [intersecting, order, ordered])
 
   return (
     <div className={styles.Skills}>
