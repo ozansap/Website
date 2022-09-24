@@ -145,7 +145,7 @@ const Skills: FC<props> = ({
         <div className={styles.Levels}>
           {levels.map((l, i) => (
             <div className={styles.Level} id={styles[l]} key={i}>
-              <div className={styles.LevelTitle} onClick={moveAnimation}>
+              <div className={styles.LevelTitle}>
                 {l}
               </div>
               <div className={styles.LevelContent}>
