@@ -4,21 +4,18 @@ import isServer from "./isServer";
 const useIntersectionObserver = (ref: MutableRefObject<any>) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  if (isServer()) return;
-
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) =>
-        setIsIntersecting(entry.isIntersecting),
-      ),
-    [],
-  );
+  const observer = useMemo(() => (
+    isServer() ? undefined :
+    new IntersectionObserver(([entry]) => (
+      setIsIntersecting(entry.isIntersecting)
+    ))
+  ), []);
 
   useEffect(() => {
-    observer.observe(ref.current);
+    observer?.observe(ref.current);
 
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
     };
   }, [ref, observer]);
 
