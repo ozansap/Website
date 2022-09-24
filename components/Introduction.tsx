@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
+import markdown from '../lib/markdown';
 import styles from '../styles/Introduction.module.scss';
+
+const introduction = [
+ "Hello, I am Ozan Sap!",
+ "I am currently studying [Computer Science at RWTH Aachen]",
+ "I like learning by [experimenting] and [experiencing]",
+ "I have a few [NodeJS] projects and [React] websites",
+ "I create websites [fully by coding] instead of using site builders like WordPress",
+ "This allows me to create the [website I imagine] rather than the one the builder forces me to"
+]
 
 const vTitle = {
   "y": {
@@ -61,15 +71,14 @@ const Introduction: FC<props> = ({
         variants={vTextContainer} 
         initial={{borderColor:"rgba(255,255,255,0)"}}
       >
-        <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
-          This is my introduction
-        </motion.p>
-        <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
-          Text Text
-        </motion.p>
-        <motion.p variants={vText} initial={{x: "100px", opacity: 0}}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, quod!
-        </motion.p>
+        {introduction.map((p, i) => (
+          <motion.p 
+            key={i}
+            variants={vText}
+            initial={{x: "100px", opacity: 0}}
+            dangerouslySetInnerHTML={{__html: markdown(p)}}
+          />
+        ))}
       </motion.div>
     </div>
   )
