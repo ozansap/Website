@@ -119,7 +119,7 @@ const projects = [
   {
     name: "This Website!",
     type: "Frontend",
-    thumbnail: "/thumbnails/portfolio.png",
+    thumbnail: "/thumbnails/website.png",
     preview: "/previews/maze.gif",
     description: "Personal portfolio website made with NextJS\nYou are in this website right now!",
     tags: ["NextJS", "React", "TypeScript", "SCSS", "Framer Motion", "Responsive"],
