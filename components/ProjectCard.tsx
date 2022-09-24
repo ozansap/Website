@@ -80,14 +80,14 @@ const ProjectCard: FC<props> = ({
           transition={{delay: 0.2}}
         >
           <motion.div className={styles.Links}>
-            <Link href={visit} replace>
-              <motion.a className={styles.Visit}>
+            <Link href={visit} passHref>
+              <motion.a className={styles.Visit} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                 <motion.h3>Visit</motion.h3>
               </motion.a>
             </Link>
-            <Link href={source} replace>
-              <motion.a className={styles.Github}>
+            <Link href={source} passHref>
+              <motion.a className={styles.Github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                 <FontAwesomeIcon icon={faGithub}/>
                 <motion.h3>Source</motion.h3>
               </motion.a>
