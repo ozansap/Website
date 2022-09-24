@@ -11,6 +11,7 @@ If you want to get in touch, do not hesitate to contact me at [me@ozansap.com](h
 - [ ] - Foldable navigation bar for mobile
 - [ ] - Backend projects in `Projects` section
 - [ ] - Background images or other visual content
+- [ ] - GIFs to projects
 
 ## Significance
 While creating this site, I wanted to use as many skills and tricks as I could that I learned along the way. This helped me remember solutions to problems I faced previously and will hopefully ensure that I face less of them in the future. Combining my past and new knowledge allowed me to understand these solutions in a deeper level.
